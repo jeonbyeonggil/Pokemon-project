@@ -1,0 +1,79 @@
+.image-item {
+  position: relative;
+  width: 120px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
+.image-item img {
+  width: 100%;
+  height: auto;
+  transition: opacity 0.3s, filter 0.3s;
+}
+
+.image-item p {
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 8px 0;
+}
+
+.delete-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: darkred;
+}
+
+/* 진화 css인데 수정좀 해야함. */
+.evolution-button {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: orange;
+  color: white;
+  border: none;
+  padding: 5px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.evolution-button:hover {
+  background-color: darkorange;
+}
+
+/* keyframes 애니메이션 효과 첨부 */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes flash {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* 반짝거림 효과  */
+.flashing {
+  animation: flash 0.3s;
+}
+
+/* 회색으로 변하는 효과 */
+.grayscale {
+  filter: grayscale(100%);
+}
